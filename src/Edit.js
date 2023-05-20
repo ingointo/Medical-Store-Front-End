@@ -13,7 +13,7 @@ function Edit() {
   const [data, setData] = useState({});
   const navigate = useNavigate()
   useEffect(() => {
-    
+
     axios
       .get('https://medicalstore.mashupstack.com/api/medicine/' + id, config)
       .then(res => {

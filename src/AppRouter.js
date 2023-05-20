@@ -17,10 +17,10 @@ function AppRouter() {
                 <Route path='/' element={<App />} />
                 <Route path='/create' element={<Add />} />
                 <Route path='/update/:id' element={<Edit />} />
-                <Route path='/login' element={<Login/>} />
-                <Route path='/signup' element={<Signup/>} />
-                <Route path='/view/:id' element={<View/>} />
-                <Route path='/medicine/list/search' element={<Search/>} />
+                <Route path='/login' element={<Login />} />
+                <Route path='/signup' element={<Signup />} />
+                <Route path='/view/:id' element={<View />} />
+                <Route path='/medicine/list/search' element={<Search />} />
 
             </Routes>
         </BrowserRouter>

@@ -5,7 +5,7 @@ import axios from 'axios'
 
 const Register = () => {
 
-   
+
     const [name, namechange] = useState("");
     const [password, passwordchange] = useState("");
     const [email, emailchange] = useState("");
@@ -44,10 +44,10 @@ const Register = () => {
     const handlesubmit = (e) => {
         e.preventDefault();
         let user = {
-             name, 
-             email,
-             password,
-             password_confirmation: password    
+            name,
+            email,
+            password,
+            password_confirmation: password
         };
         console.log(user)
         if (IsValidate()) {
@@ -61,12 +61,12 @@ const Register = () => {
                 //     console.log(err)
                 //     toast.error('Failed : ', err.message)
                 // })
-                .catch(error=>{
+                .catch(error => {
                     console.log(error)
-                    if(error.response.data.errors){
+                    if (error.response.data.errors) {
                         toast.warning(Object.values(error.response.data.errors));
                         console.log(Object.keys(error.response.data.errors).join(''))
-                    }else{
+                    } else {
                         toast.warning('Failed to connect to api');
                     }
                 })

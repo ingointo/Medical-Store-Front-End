@@ -10,7 +10,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch()
   const navigate = useNavigate()
- 
+
 
   // useEffect(()=> {
   //   sessionStorage.clear();
@@ -20,27 +20,27 @@ function Login() {
     e.preventDefault();
     if (validate()) {
       axios
-        .post('https://medicalstore.mashupstack.com/api/login',{
-          email: email, 
+        .post('https://medicalstore.mashupstack.com/api/login', {
+          email: email,
           password: password
         })
         .then((res) => {
           var user = {
-            email: email, 
+            email: email,
             token: res.data.token
           }
           dispatch(setUser(user))
           navigate('/')
         })
-        .catch(error=>{
-          if(error.response.data.errors){
-             toast.warning(Object.values(error.response.data.errors).join(' '))
-          }else if(error.response.data.message){
-              toast.warning(error.response.data.message)
-          }else{
-              toast.warning('Failed to login user. Please contact admin')
+        .catch(error => {
+          if (error.response.data.errors) {
+            toast.warning(Object.values(error.response.data.errors).join(' '))
+          } else if (error.response.data.message) {
+            toast.warning(error.response.data.message)
+          } else {
+            toast.warning('Failed to login user. Please contact admin')
           }
-      })
+        })
     }
   };
   const validate = () => {

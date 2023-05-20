@@ -38,8 +38,8 @@ function App() {
 
   function deleteData(id) {
     console.log(id);
-    console.log('****************************');
-    axios.delete('https://medicalstore.mashupstack.com/api/medicine/'+id, config)
+
+    axios.delete('https://medicalstore.mashupstack.com/api/medicine/' + id, config)
       .then(() => {
         toast.success('Successfully deleted');
         fetchPosts(); // Fetch posts again after successful deletion
@@ -63,7 +63,7 @@ function App() {
       <Navbar />
       <div className="container mt-5">
         <div className="text-end">
-        <Link to="/medicine/list/search" className="btn btn-info ml-4 mx-1">@Search Medicine</Link>
+          <Link to="/medicine/list/search" className="btn btn-info ml-4 mx-1">@Search Medicine</Link>
           <Link to="/create" className="btn btn-primary">
             Add +
           </Link>

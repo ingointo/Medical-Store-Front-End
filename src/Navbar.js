@@ -18,20 +18,20 @@ function Navbar() {
 
     function logout() {
         if (user) {
-          axios
-            .post('https://medicalstore.mashupstack.com/api/logout', {}, {
-              headers: { 'Authorization': "Bearer " + user.token }
-            })
-            .then(() => {
-              dispatch(removeUser());
-              navigate('/login');
-            })
-            .catch(error => {
-              // Handle the error, e.g., display an error message
-            });
+            axios
+                .post('https://medicalstore.mashupstack.com/api/logout', {}, {
+                    headers: { 'Authorization': "Bearer " + user.token }
+                })
+                .then(() => {
+                    dispatch(removeUser());
+                    navigate('/login');
+                })
+                .catch(error => {
+                    // Handle the error, e.g., display an error message
+                });
         }
-      }
-      
+    }
+
     return <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
         <div className="navbar-brand">
             <h4>Medicine Store</h4>
